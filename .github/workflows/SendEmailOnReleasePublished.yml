@@ -1,0 +1,18 @@
+name: Send Release Notification
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  Send_Notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Send Email
+        run: |
+          echo "Release Published"
